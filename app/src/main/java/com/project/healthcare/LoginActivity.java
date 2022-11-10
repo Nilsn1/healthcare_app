@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
 //                            Toast.makeText(LoginActivity.this, "Your account has been Created", Toast.LENGTH_SHORT).show();
 
-                            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                             startActivity(intent);
 
                         } else {
