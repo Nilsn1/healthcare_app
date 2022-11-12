@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -41,7 +43,7 @@ public class SignUpActivity extends AppCompatActivity {
                 String userEmail = email.getText().toString();
                 String userPassword = password.getText().toString();
 
-                signupFirebase(userEmail,userPassword);
+                checkUser(userEmail, userPassword);
 
             }
         });
@@ -58,8 +60,28 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
-    public void signupFirebase(String userEmail, String userPassword) {
+    public void checkUser(String userEmail, String userPassword) {
 
+        //check email already exist or not.
+        auth.fetchSignInMethodsForEmail(userEmail)
+                .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+
+                        boolean isNewUser = task.getResult().getSignInMethods().isEmpty();
+
+                        if (isNewUser) {
+                            signupNewUser(userEmail, userPassword);
+                        } else {
+                            Log.e("TAG", "Is Old User!");
+                            Toast.makeText(SignUpActivity.this, "Email already registered.Try another email", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+    }
+
+    public void signupNewUser(String userEmail, String userPassword) {
         auth.createUserWithEmailAndPassword(userEmail, userPassword)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -68,7 +90,7 @@ public class SignUpActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(SignUpActivity.this, "Your account has been Created", Toast.LENGTH_SHORT).show();
 
-                            Intent intent = new Intent(SignUpActivity.this,LoginActivity.class);
+                            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                             startActivity(intent);
 
                         } else {
@@ -78,6 +100,5 @@ public class SignUpActivity extends AppCompatActivity {
                         }
                     }
                 });
-
     }
 }

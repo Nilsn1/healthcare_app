@@ -2,6 +2,7 @@ package com.project.healthcare;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,6 +19,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigation;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,23 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         bottomNavigation = findViewById(R.id.bottonNavigationView);
+        toolbar = findViewById(R.id.toolbar);
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int id = item.getItemId();
+
+                if (id == R.id.login) {
+                    Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                    startActivity(intent);
+
+                } else if (id == R.id.chatbot) {
+                    Toast.makeText(HomeActivity.this, "Chatbot", Toast.LENGTH_SHORT).show();
+                }
+                return false;
+            }
+        });
 
         //default fragment
         loadFragment(new HomeFragment());
@@ -55,7 +74,7 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu,menu);
+        inflater.inflate(R.menu.menu, menu);
         return true;
     }
 
@@ -70,7 +89,6 @@ public class HomeActivity extends AppCompatActivity {
         } else {
             Toast.makeText(HomeActivity.this, "Chatbot", Toast.LENGTH_SHORT).show();
         }
-
         return super.onOptionsItemSelected(item);
     }
 
