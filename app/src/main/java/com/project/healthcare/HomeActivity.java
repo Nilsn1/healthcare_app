@@ -27,23 +27,24 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         bottomNavigation = findViewById(R.id.bottonNavigationView);
-        toolbar = findViewById(R.id.toolbar);
 
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                int id = item.getItemId();
-
-                if (id == R.id.login) {
-                    Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
-                    startActivity(intent);
-
-                } else if (id == R.id.chatbot) {
-                    Toast.makeText(HomeActivity.this, "Chatbot", Toast.LENGTH_SHORT).show();
-                }
-                return false;
-            }
-        });
+//        toolbar = findViewById(R.id.toolbar);
+//
+//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                int id = item.getItemId();
+//
+//                if (id == R.id.login) {
+//                    Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+//                    startActivity(intent);
+//
+//                } else if (id == R.id.chatbot) {
+//                    Toast.makeText(HomeActivity.this, "Chatbot", Toast.LENGTH_SHORT).show();
+//                }
+//                return false;
+//            }
+//        });
 
         //default fragment
         loadFragment(new HomeFragment());

@@ -42,16 +42,6 @@
                 android:layout_height="300dp"
                 android:src="@drawable/home1"/>
 
-            <Button
-                android:id="@+id/btnLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:textSize="18sp"
-                android:padding="10dp"
-                android:text="Login"
-                app:cornerRadius="15dp"/>
-
         </LinearLayout>
 
 
