@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 if (id == R.id.home) {
                     loadFragment(new HomeFragment());
-                } else if (id == R.id.meditation) {
+                } else if (id == R.id.services) {
                     loadFragment(new MeditationFragment());
                 } else if (id == R.id.chatbot) {
                     loadFragment(new ChatbotFragment());

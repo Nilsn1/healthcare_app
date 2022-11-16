@@ -5,9 +5,9 @@
         android:title="Home"
         android:icon="@drawable/home"/>
 
-    <item android:id="@+id/meditation"
-        android:title="Meditation"
-        android:icon="@drawable/yoga"/>
+    <item android:id="@+id/services"
+        android:title="Services"
+        android:icon="@drawable/services"/>
 
     <item android:id="@+id/chatbot"
         android:title="Chatbot"
