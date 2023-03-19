@@ -8,9 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ExpertsFragment extends Fragment {
+public class FeedbackFragment extends Fragment {
 
-    public ExpertsFragment() {
+    public FeedbackFragment() {
         // Required empty public constructor
     }
 
@@ -18,6 +18,6 @@ public class ExpertsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_experts, container, false);
+        return inflater.inflate(R.layout.feedback_experts, container, false);
     }
 }

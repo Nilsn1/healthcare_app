@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/home"
-        android:title="Home"
-        android:icon="@drawable/home"/>
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:title="Home" />
 
-    <item android:id="@+id/services"
-        android:title="Services"
-        android:icon="@drawable/services"/>
+    <item
+        android:id="@+id/services"
+        android:icon="@drawable/services"
+        android:title="Services" />
 
-    <item android:id="@+id/chatbot"
-        android:title="Chatbot"
-        android:icon="@drawable/chatbot"/>
+    <item
+        android:id="@+id/chatbot"
+        android:icon="@drawable/chatbot"
+        android:title="Chatbot" />
 
-    <item android:id="@+id/workout"
-        android:title="Workout"
-        android:icon="@drawable/workout"/>
 
-    <item android:id="@+id/experts"
-        android:title="Experts"
-        android:icon="@drawable/people"/>
+    <item
+        android:id="@+id/experts"
+        android:icon="@drawable/people"
+        android:title="Experts" />
 
 </menu>

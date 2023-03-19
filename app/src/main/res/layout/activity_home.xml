@@ -6,21 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/primary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/MyTheme"
-        app:title="HealthCare"
-        tools:ignore="MissingConstraints" />
+    <!--    <androidx.appcompat.widget.Toolbar-->
+    <!--        android:id="@+id/toolbar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="?attr/actionBarSize"-->
+    <!--        android:background="@color/primary"-->
+    <!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+    <!--        app:popupTheme="@style/MyTheme"-->
+    <!--        app:title="HealthCare"-->
+    <!--        tools:ignore="MissingConstraints" />-->
 
     <FrameLayout
         android:id="@+id/mainContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
         android:layout_marginBottom="?attr/actionBarSize"
         android:background="@color/Main_background">
 
@@ -30,6 +29,7 @@
         android:id="@+id/bottonNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:theme="@style/BottomNavigationView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/sidemenu" />
 

@@ -57,13 +57,12 @@ public class HomeActivity extends AppCompatActivity {
                 if (id == R.id.home) {
                     loadFragment(new HomeFragment());
                 } else if (id == R.id.services) {
-                    loadFragment(new MeditationFragment());
+                    loadFragment(new ServicesFragment());
                 } else if (id == R.id.chatbot) {
+                    Toast.makeText(HomeActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
                     loadFragment(new ChatbotFragment());
-                } else if (id == R.id.workout) {
-                    loadFragment(new WorkoutFragment());
                 } else {
-                    loadFragment(new ExpertsFragment());
+                    loadFragment(new FeedbackFragment());
                 }
                 return true;
             }
@@ -101,5 +100,29 @@ public class HomeActivity extends AppCompatActivity {
         ft.replace(R.id.mainContainer, fragment);
         ft.commit();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager fm = getSupportFragmentManager();
+        Fragment fragInstance = fm.findFragmentById(R.id.mainContainer);
+
+        if (fragInstance instanceof DentalFragment) {
+            loadFragment(new ServicesFragment());
+        } else if (fragInstance instanceof EyeFragment) {
+            loadFragment(new ServicesFragment());
+        } else if (fragInstance instanceof ServicesFragment) {
+            loadFragment(new HomeFragment());
+            bottomNavigation.setSelectedItemId(R.id.home);
+        } else if (fragInstance instanceof ChatbotFragment) {
+            loadFragment(new HomeFragment());
+            bottomNavigation.setSelectedItemId(R.id.home);
+        } else if (fragInstance instanceof FeedbackFragment) {
+            loadFragment(new HomeFragment());
+        } else if (fragInstance instanceof DetailFragment) {
+            loadFragment(new ServicesFragment());
+        } else {
+            finish();
+        }
     }
 }

@@ -30,7 +30,7 @@ public class ChatbotFragment extends Fragment {
         webView.getSettings().setLoadsImagesAutomatically(true);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        webView.loadUrl("https://www.worldometers.info/coronavirus");
+        webView.loadUrl("https://askanya.in");
         webView.setWebViewClient(new WebViewClient());
 
         return view;
