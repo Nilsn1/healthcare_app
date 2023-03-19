@@ -57,7 +57,14 @@
                     android:fontFamily="@font/nunito_bold"
                     android:text="Share your experience"
                     android:textColor="@color/primary"
-                    android:textSize="20sp" />
+                    android:textSize="22sp" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:max="5" />
 
                 <EditText
                     android:layout_width="match_parent"
