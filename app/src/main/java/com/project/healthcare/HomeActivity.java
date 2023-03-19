@@ -57,10 +57,15 @@ public class HomeActivity extends AppCompatActivity {
                 if (id == R.id.home) {
                     loadFragment(new HomeFragment());
                 } else if (id == R.id.services) {
+
                     loadFragment(new ServicesFragment());
-                } else if (id == R.id.chatbot) {
+                } else if (id == R.id.gmap) {
                     Toast.makeText(HomeActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
-                    loadFragment(new ChatbotFragment());
+//                    loadFragment(new ChatbotFragment());
+
+                    Intent intent = new Intent(HomeActivity.this, MapsActivity.class);
+                    startActivity(intent);
+
                 } else {
                     loadFragment(new FeedbackFragment());
                 }

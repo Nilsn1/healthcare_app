@@ -12,14 +12,13 @@
         android:title="Services" />
 
     <item
-        android:id="@+id/chatbot"
-        android:icon="@drawable/chatbot"
-        android:title="Chatbot" />
-
+        android:id="@+id/gmap"
+        android:icon="@drawable/ic_location"
+        android:title="Google Map" />
 
     <item
-        android:id="@+id/experts"
+        android:id="@+id/feedback"
         android:icon="@drawable/people"
-        android:title="Experts" />
+        android:title="Feedback" />
 
 </menu>
