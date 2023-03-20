@@ -63,38 +63,19 @@
                 android:textColor="@color/text_primary"
                 android:textSize="15sp" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="30dp"
                 android:background="@drawable/cardback"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/cardback"
-                    android:fontFamily="@font/nunito_bold"
-                    android:hint="Search"
-                    android:paddingVertical="12dp"
-                    android:paddingStart="20dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints" />
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="15dp"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:src="@drawable/ic_search"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:focusable="false"
+                android:fontFamily="@font/nunito_bold"
+                app:closeIcon="@drawable/ic_close"
+                app:iconifiedByDefault="false"
+                app:queryHint="Search"
+                app:searchIcon="@drawable/ic_search" />
 
             <TextView
                 android:layout_width="match_parent"

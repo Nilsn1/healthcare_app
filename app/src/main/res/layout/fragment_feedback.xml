@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="25dp">
+                android:padding="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -60,34 +60,47 @@
                     android:textSize="22sp" />
 
                 <RatingBar
+                    android:id="@+id/ratingbar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:max="5" />
 
+                <TextView
+                    android:id="@+id/txtrating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text=" "
+                    android:textColor="@color/primary"
+                    android:textSize="16sp" />
+
                 <EditText
+                    android:id="@+id/subject"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/custombutton"
+                    android:background="@drawable/customborder"
                     android:fontFamily="@font/nunito_bold"
                     android:hint="Subject"
                     android:padding="12dp"
                     android:textSize="17sp" />
 
                 <EditText
+                    android:id="@+id/description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/custombutton"
+                    android:background="@drawable/customborder"
                     android:fontFamily="@font/nunito_bold"
                     android:hint="Type Your Review..."
                     android:padding="12dp"
                     android:textSize="17sp" />
 
                 <Button
-                    android:id="@+id/btnLogin"
+                    android:id="@+id/btnSend"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"

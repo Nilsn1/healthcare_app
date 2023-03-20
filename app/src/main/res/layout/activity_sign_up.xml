@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="@color/Main_background"
+    android:gravity="center"
+    android:orientation="vertical"
     android:padding="20dp"
     tools:context=".SignUpActivity">
 
@@ -28,44 +27,56 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/poppins_semibold"
                 android:text="SignUp"
                 android:textColor="@color/primary"
-                android:textSize="30sp"
-                android:fontFamily="@font/poppins_semibold"/>
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/customborder"
+                android:fontFamily="@font/nunito_bold"
+                android:hint="Username"
+                android:padding="12dp"
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custombutton"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/customborder"
+                android:fontFamily="@font/nunito_bold"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-                android:padding="10dp"
-                android:textSize="17sp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/poppins_semibold"/>
+                android:padding="12dp"
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custombutton"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/customborder"
+                android:fontFamily="@font/nunito_bold"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:padding="10dp"
-                android:textSize="17sp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/poppins_semibold"/>
+                android:padding="12dp"
+                android:textSize="17sp" />
 
             <Button
                 android:id="@+id/signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:textSize="18sp"
+                android:fontFamily="@font/nunito_bold"
                 android:padding="10dp"
                 android:text="SignUp"
-                app:cornerRadius="15dp"/>
+                android:textSize="18sp"
+                app:cornerRadius="15dp" />
 
         </LinearLayout>
 
@@ -75,26 +86,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/nunito_bold"
             android:text="Already Have account?"
-            android:textSize="15sp"
-            android:fontFamily="@font/poppins_semibold"/>
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/btnLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/nunito_bold"
             android:text="  Login now"
-            android:textSize="15sp"
             android:textColor="@color/primary"
-            android:fontFamily="@font/poppins_semibold"/>
+            android:textSize="16sp" />
 
     </LinearLayout>
 

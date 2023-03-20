@@ -119,9 +119,6 @@ public class HomeActivity extends AppCompatActivity {
         } else if (fragInstance instanceof ServicesFragment) {
             loadFragment(new HomeFragment());
             bottomNavigation.setSelectedItemId(R.id.home);
-        } else if (fragInstance instanceof ChatbotFragment) {
-            loadFragment(new HomeFragment());
-            bottomNavigation.setSelectedItemId(R.id.home);
         } else if (fragInstance instanceof FeedbackFragment) {
             loadFragment(new HomeFragment());
         } else if (fragInstance instanceof DetailFragment) {
