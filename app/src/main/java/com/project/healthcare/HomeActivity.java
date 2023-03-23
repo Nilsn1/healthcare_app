@@ -63,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.makeText(HomeActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
 //                    loadFragment(new ChatbotFragment());
 
-                    Intent intent = new Intent(HomeActivity.this, MapsActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, GmapActivity.class);
                     startActivity(intent);
 
                 } else {
