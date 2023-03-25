@@ -44,6 +44,18 @@
                 android:textSize="17sp" />
 
             <EditText
+                android:id="@+id/mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/customborder"
+                android:fontFamily="@font/nunito_bold"
+                android:hint="Mobile No."
+                android:inputType="number"
+                android:padding="12dp"
+                android:textSize="17sp" />
+
+            <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

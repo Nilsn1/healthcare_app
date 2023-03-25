@@ -21,4 +21,17 @@
         map:queryHint="Search location"
         map:searchIcon="@drawable/ic_search" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/updatelocation"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="#29A71A"
+        android:clickable="true"
+        android:src="@drawable/whatsapp"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
 </fragment>

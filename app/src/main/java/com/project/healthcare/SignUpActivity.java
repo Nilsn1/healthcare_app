@@ -16,21 +16,31 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.SignInMethodQueryResult;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    EditText email, password;
+    EditText username, mobile, email, password;
     Button btnsignup;
     TextView login;
 
+    FirebaseDatabase database;
+    DatabaseReference reference;
+
     FirebaseAuth auth = FirebaseAuth.getInstance();
+
+    String userName, userMobile, userEmail, userPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        username = findViewById(R.id.username);
+        mobile = findViewById(R.id.mobile);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btnsignup = findViewById(R.id.signup);
@@ -40,8 +50,15 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String userEmail = email.getText().toString();
-                String userPassword = password.getText().toString();
+                userName = username.getText().toString();
+                userMobile = mobile.getText().toString();
+                userEmail = email.getText().toString();
+                userPassword = password.getText().toString();
+
+//                database = FirebaseDatabase.getInstance();
+//                reference = database.getReference("UsersDetails");
+//                StoreUserDetails storeUserDetails = new StoreUserDetails(userName, userMobile, userEmail);
+//                reference.child(userMobile).setValue(storeUserDetails);
 
                 checkUser(userEmail, userPassword);
 
@@ -89,6 +106,15 @@ public class SignUpActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(SignUpActivity.this, "Your account has been Created", Toast.LENGTH_SHORT).show();
+
+                            FirebaseUser firebaseuser = auth.getCurrentUser();
+
+                            String userID = firebaseuser.getUid();
+
+                            database = FirebaseDatabase.getInstance();
+                            reference = database.getReference("UsersDetails");
+                            StoreUserDetails storeUserDetails = new StoreUserDetails(userName, userMobile, userEmail);
+                            reference.child(userID).setValue(storeUserDetails);
 
                             Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                             startActivity(intent);
