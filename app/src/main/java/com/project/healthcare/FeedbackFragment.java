@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class FeedbackFragment extends Fragment {
 
     RatingBar ratingBar;
-    EditText subject, descrition;
+    EditText co, referringDoctor, referredtowhom, review, suggestion;
     Button btnSend;
 
     TextView txtrating;
@@ -37,8 +37,12 @@ public class FeedbackFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_feedback, container, false);
 
         ratingBar = view.findViewById(R.id.ratingbar);
-        subject = view.findViewById(R.id.subject);
-        descrition = view.findViewById(R.id.description);
+        co = view.findViewById(R.id.co);
+        referringDoctor = view.findViewById(R.id.referringDoctor);
+        referredtowhom = view.findViewById(R.id.referredtowhom);
+        review = view.findViewById(R.id.review);
+        suggestion = view.findViewById(R.id.suggestion);
+
         btnSend = view.findViewById(R.id.btnSend);
         txtrating = view.findViewById(R.id.txtrating);
 
@@ -53,11 +57,13 @@ public class FeedbackFragment extends Fragment {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String myco = co.getText().toString();
+                String myreferringDoctor = referringDoctor.getText().toString();
+                String myreferredtowhom = referredtowhom.getText().toString();
+                String myreview = review.getText().toString();
+                String mysuggestion = suggestion.getText().toString();
 
-                mysub = subject.getText().toString();
-                mydes = descrition.getText().toString();
-
-                if (subject.getText().toString().isEmpty() || descrition.getText().toString().isEmpty()) {
+                if (co.getText().toString().isEmpty() || referringDoctor.getText().toString().isEmpty() || myrating == null) {
                     Toast.makeText(getContext(), "Please fill all fields", Toast.LENGTH_SHORT).show();
                 } else {
                     try {
@@ -65,8 +71,13 @@ public class FeedbackFragment extends Fragment {
                         intent.setData(Uri.parse("mailto:"));
                         String[] to = {"ajayhindole15@gmail.com"};
                         intent.putExtra(Intent.EXTRA_EMAIL, to);
-                        intent.putExtra(Intent.EXTRA_SUBJECT, mysub);
-                        intent.putExtra(Intent.EXTRA_TEXT, "Rating:" + myrating + "\n" + mydes);
+//                        intent.putExtra(Intent.EXTRA_SUBJECT, mysub);
+                        intent.putExtra(Intent.EXTRA_TEXT, "Rating: " + myrating + "\n" +
+                                "C/O? :" + myco + "\n" +
+                                "Name of Referring doctor: " + myreferringDoctor + "\n" +
+                                "Referred to whom: " + myreferredtowhom + "\n" +
+                                "Review: " + myreview + "\n" +
+                                "Suggestion: " + mysuggestion + "\n");
 
                         startActivity(Intent.createChooser(intent, "Send Email"));
 

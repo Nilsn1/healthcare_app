@@ -78,24 +78,57 @@
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/subject"
+                    android:id="@+id/co"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/customborder"
                     android:fontFamily="@font/nunito_bold"
-                    android:hint="Subject"
+                    android:hint="What is your C/O?"
                     android:padding="12dp"
                     android:textSize="17sp" />
 
                 <EditText
-                    android:id="@+id/description"
+                    android:id="@+id/referringDoctor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/customborder"
                     android:fontFamily="@font/nunito_bold"
-                    android:hint="Type Your Review..."
+                    android:hint="Name of Referring doctor"
+                    android:padding="12dp"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:id="@+id/referredtowhom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/customborder"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="Referred to whom"
+                    android:padding="12dp"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:id="@+id/review"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/customborder"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="Your Review..."
+                    android:padding="12dp"
+                    android:textSize="17sp" />
+
+                <EditText
+                    android:id="@+id/suggestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/customborder"
+                    android:fontFamily="@font/nunito_bold"
+                    android:hint="Any Suggestion?"
                     android:padding="12dp"
                     android:textSize="17sp" />
 
