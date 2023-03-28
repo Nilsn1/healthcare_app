@@ -133,6 +133,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/btncall1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -197,6 +198,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/btncall2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -261,6 +263,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/btncall3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -325,6 +328,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/btncall4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"

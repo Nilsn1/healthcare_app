@@ -1,6 +1,7 @@
 package com.project.healthcare;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -23,8 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HomeFragment extends Fragment {
 
-    TextView username;
-
+    TextView username, btncall1, btncall2, btncall3, btncall4;
     FirebaseAuth authprofile;
 
     public HomeFragment() {
@@ -37,6 +37,43 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         username = view.findViewById(R.id.username);
+        btncall1 = view.findViewById(R.id.btncall1);
+        btncall2 = view.findViewById(R.id.btncall2);
+        btncall3 = view.findViewById(R.id.btncall3);
+        btncall4 = view.findViewById(R.id.btncall4);
+
+        btncall1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + "9967953472"));
+                startActivity(intent);
+            }
+        });
+        btncall2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + "9967953472"));
+                startActivity(intent);
+            }
+        });
+        btncall3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + "9967953472"));
+                startActivity(intent);
+            }
+        });
+        btncall4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + "9967953472"));
+                startActivity(intent);
+            }
+        });
 
         authprofile = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authprofile.getCurrentUser();
