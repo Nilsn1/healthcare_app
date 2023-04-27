@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">HealthCare</string>
+    <string name="app_name">Dental Vision</string>
     <string name="treatment">
 
     </string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="google_maps_key">AIzaSyAfZ_5PtyONnTPCLc49RsiUK4Owr3XR74s</string>
 </resources>
